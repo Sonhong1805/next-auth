@@ -12,6 +12,7 @@ const LoginSocial = () => {
       router.push("/");
     }
   }, [session, router]);
+
   return (
     <div>
       <div className="text-center py-2">
@@ -58,7 +59,7 @@ const LoginSocial = () => {
           <span className="vij vim">GitHub</span>
         </button>
         <button
-          onClick={() => signIn("github")}
+          onClick={() => signIn("facebook")}
           className="flex-1 flex items-center gap-[0.75rem] justify-center border border-indigo-600 rounded-md px-3 py-1.5">
           <svg
             stroke="currentColor"
