@@ -1,6 +1,16 @@
+import { use } from "react";
 import LoginSocial from "./LoginSocial";
+import { redirect } from "next/navigation";
 
-const Login = () => {
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
+
+const Login = (props: { searchParams: SearchParams }) => {
+  const searchParams = use(props.searchParams);
+
+  if (searchParams.callbackUrl) {
+    redirect(searchParams.callbackUrl as string);
+  }
+
   return (
     <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
